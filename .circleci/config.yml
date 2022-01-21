@@ -16,8 +16,8 @@ jobs:
  #         command:  echo "2.6.3" > .ruby-version
 
       - run:
-          name: Which ruby?
-          command: ruby -v
+          name: Which npm?
+          command: npm -v
 
       - run:
           name: test
