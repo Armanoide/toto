@@ -1,27 +1,16 @@
 version: 2.1
+
+defaults: &defaults
+  working_directory: ~/snapshift-mobile
+
 jobs:
   build:
-    working_directory: ~/snapshift-mobile
+    <<: *defaults
     docker:
       - image: cimg/ruby:2.6.3
-      - image: cimg/node:12.16
 
     steps:
       - checkout
-
-
-      # Set Ruby version
- #     - run:
- #         name: Set Ruby Version
- #         command:  echo "2.6.3" > .ruby-version
-
-      - run:
-          name: Which npm?
-          command: npm -v
-
-      - run:
-          name: test
-          command:  ls -la
 
 
       - run:
@@ -31,7 +20,6 @@ jobs:
       - run:
           name: Which bundler?
           command: bundle -v
-
 
       - restore_cache:
           keys:
@@ -46,6 +34,16 @@ jobs:
           key: v3-snap-native-bundle-{{ checksum "Gemfile.lock" }}
           paths:
             - vendor/bundle
+
+
+
+  node_only_requests:
+    <<: *defaults
+    docker:
+      - image: cimg/node:12.16
+
+    steps:
+      - checkout
 
       - restore_cache:
           keys:
@@ -71,7 +69,7 @@ jobs:
       xcode: 12.5.1
 
     steps:
-      - attach_workspace: 
+      - attach_workspace:
           at: ~/snapshift-mobile
       - run:
           name: Fastlane
