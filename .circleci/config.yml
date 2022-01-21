@@ -64,12 +64,11 @@ jobs:
             - vendor/bundle
 
   ios-build:
+    <<: *defaults
     macos:
       xcode: 12.5.1
 
     steps:
-      - attach_workspace:
-          at: ~/snapshift-mobile
       - run:
           name: Fastlane
           command: bundle exec fastlane ios beta
@@ -77,12 +76,14 @@ jobs:
 
 
   android-build:
+    <<: *defaults
     docker:
       - image: circleci/android:api-29-node
 
     steps:
-      - attach_workspace:
-          at: ~/snapshift-mobile
+      - run:
+          name: ls -la
+          command: ls -la
       - run:
           name: Fastlane
           command: bundle exec fastlane ios beta
