@@ -9,9 +9,21 @@ jobs:
     steps:
       - checkout
 
+      # Set Ruby version
+      - run:
+          name: Set Ruby Version
+          command:  echo "2.6.3" > ~/.ruby-version
+
+      - run:
+          name: test
+          command:  ls -la
+
+
       - run:
           name: install bundler
           command: gem install bundler
+
+
 
       - restore_cache:
           keys:
