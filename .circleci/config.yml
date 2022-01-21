@@ -3,8 +3,8 @@ jobs:
   build:
     working_directory: ~/snapshift-mobile
     docker:
-      - image: cimg/node:12.16
       - image: cimg/ruby:2.6.3
+      - image: cimg/node:12.16
 
     steps:
       - checkout
