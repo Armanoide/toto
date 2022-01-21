@@ -46,7 +46,8 @@ jobs:
       - image: cimg/node:12.16
 
     steps:
-      - checkout
+      - attach_workspace:
+          at: ~/snapshift-mobile
 
       - restore_cache:
           keys:
@@ -72,6 +73,9 @@ jobs:
       xcode: 12.5.1
 
     steps:
+      - attach_workspace:
+          at: ~/snapshift-mobile
+
       - run:
           name: Fastlane
           command: bundle exec fastlane ios beta
@@ -84,6 +88,9 @@ jobs:
       - image: circleci/android:api-29-node
 
     steps:
+      - attach_workspace:
+          at: ~/snapshift-mobile
+
       - run:
           name: ls -la
           command: ls -la
