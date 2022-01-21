@@ -12,7 +12,7 @@ jobs:
       # Set Ruby version
       - run:
           name: Set Ruby Version
-          command:  echo "2.6.3" > ~/.ruby-version
+          command:  echo "2.6.3" > .ruby-version
 
       - run:
           name: test
