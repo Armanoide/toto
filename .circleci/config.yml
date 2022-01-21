@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - checkout
-  
+
       - run:
           name: install bundler
           command: gem install bundler
@@ -98,6 +98,8 @@ workflows:
       - android-build:
           requires:
             - build
+            - node_only_requests
       - ios-build:
           requires:
             - build
+            - node_only_requests
