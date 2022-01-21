@@ -50,6 +50,10 @@ jobs:
       - attach_workspace:
           at: ~/snapshift-mobile
 
+      - run:
+          name: ls -la
+          command: ls -la
+
       - restore_cache:
           keys:
             - v1-snap-native-node-modules-{{ checksum "package-lock.json" }}
@@ -95,6 +99,7 @@ jobs:
       - run:
           name: ls -la
           command: ls -la
+
       - run:
           name: Fastlane
           command: bundle exec fastlane ios beta
