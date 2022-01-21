@@ -38,7 +38,7 @@ jobs:
           root: ~/snapshift-mobile
           paths:
             - vendor/bundle
-            - ~/snapshift-mobile
+            - /home/snapshift-mobile
 
 
   node_only_requests:
