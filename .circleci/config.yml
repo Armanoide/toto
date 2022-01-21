@@ -14,9 +14,9 @@ jobs:
  #         name: Set Ruby Version
  #         command:  echo "2.6.3" > .ruby-version
 
-#      - run:
-#          name: test
-#          command:  ls -la
+      - run:
+          name: test
+          command:  ls -la
 
 
 #      - run:
