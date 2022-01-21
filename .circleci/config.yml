@@ -38,7 +38,7 @@ jobs:
           root: ~/snapshift-mobile
           paths:
             - vendor/bundle
-            - /home/snapshift-mobile
+            - snapshift-mobile
 
 
   node_only_requests:
@@ -48,7 +48,7 @@ jobs:
 
     steps:
       - attach_workspace:
-          at: ~/snapshift-mobile
+          at: /home/circleci
 
       - run:
           name: ls -la
@@ -79,7 +79,7 @@ jobs:
 
     steps:
       - attach_workspace:
-          at: ~/snapshift-mobile
+          at: /home/circleci
 
       - run:
           name: Fastlane
@@ -94,7 +94,7 @@ jobs:
 
     steps:
       - attach_workspace:
-          at: ~/snapshift-mobile
+          at: /home/circleci
 
       - run:
           name: ls -la
