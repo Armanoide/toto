@@ -4,7 +4,7 @@ jobs:
     working_directory: ~/snapshift-mobile
     docker:
       - image: cimg/node:12.16
-      - image: circleci/ruby:2.6.3-stretch
+      - image: cimg/ruby:2.6.3
 
     steps:
       - checkout
@@ -101,4 +101,3 @@ workflows:
       - ios-build:
           requires:
             - build
-
