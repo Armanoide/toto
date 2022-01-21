@@ -59,6 +59,10 @@ jobs:
           at: /home/circleci
 
       - run:
+          name: pwd
+          command: pwd
+
+      - run:
           name: ls -la
           command: ls -la
 
@@ -123,9 +127,7 @@ workflows:
           - build
       - android-build:
           requires:
-            - build
             - node_only_requests
       - ios-build:
           requires:
-            - build
             - node_only_requests
