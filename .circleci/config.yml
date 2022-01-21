@@ -13,8 +13,8 @@ jobs:
       - checkout
 
       - run:
-          name: ls -la
-          command: ls -la
+          name: pwd
+          command: pwd
 
       - run:
           name: ls -la ..
