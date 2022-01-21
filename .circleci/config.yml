@@ -17,8 +17,8 @@ jobs:
           command: ls -la
 
       - run:
-          name: ls -la..
-          command: ls -la..
+          name: ls -la ..
+          command: ls -la ..
 
       - run:
           name: install bundler
