@@ -42,22 +42,23 @@ jobs:
           paths:
             - vendor/bundle
 
+      - run:
+          name: ls -la
+          command: ls -la
+
       - persist_to_workspace:
-          root: ~/snapshift-mobile
+          root: .
           paths:
             - vendor/bundle
             - snapshift-mobile
 
 
   node_only_requests:
-#    <<: *defaults
+    <<: *defaults
     docker:
       - image: cimg/node:12.16
 
     steps:
-      - attach_workspace:
-          at: ~/snapshift-mobile
-
       - run:
           name: pwd
           command: pwd
