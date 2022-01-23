@@ -55,8 +55,8 @@ jobs:
       - image: cimg/node:12.16
 
     steps:
-      - attach_workspace:
-          at: /home/circleci
+#      - attach_workspace:
+#          at: /home/circleci
 
       - run:
           name: pwd
@@ -65,6 +65,10 @@ jobs:
       - run:
           name: ls -la
           command: ls -la
+
+      - run:
+          name: ls -la ..
+          command: ls -la ..
 
       - restore_cache:
           keys:
