@@ -50,18 +50,13 @@ jobs:
 
 
   node_only_requests:
-    <<: *defaults
+#    <<: *defaults
     docker:
       - image: cimg/node:12.16
 
     steps:
-#      - attach_workspace:
-#          at: /home/circleci
-
-      - run:
-          name: pwd
-          command: pwd
-
+      - attach_workspace:
+          at: ~/snapshift-mobile
 
       - run:
           name: pwd
