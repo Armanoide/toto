@@ -8,7 +8,7 @@ jobs:
     <<: *defaults
     docker:
       - image: cimg/ruby:2.6.3
-      - image: cimg/node:12.16
+      - image: circleci/node:14
 
     steps:
       - checkout
@@ -56,12 +56,6 @@ jobs:
           root: ~/snapshift-mobile
           paths:
             - node_modules
-
-
-      - persist_to_workspace:
-          root: ~/snapshift-mobile
-          paths:
-            - vendor/bundle
 
   ios-build:
     <<: *defaults
