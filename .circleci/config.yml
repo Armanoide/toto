@@ -9,6 +9,9 @@ jobs:
     docker:
       - image: cimg/ruby:2.6.3
       - image: circleci/node:14
+    environment:
+      GITHUB_CONTEXT: ${{ toJson(github) }}
+      run: echo "$GITHUB_CONTEXT"
 
     steps:
       - checkout
