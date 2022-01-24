@@ -2,24 +2,21 @@ jobs:
   analyse_js:
     executor: rn/linux_js
     steps:
-      - attach_workspace:
-          at: .
-      - rn/yarn_install
-      - run:
-          command: yarn eslint
-          name: Run ESLint
-      - run:
-          command: yarn flow
-          name: Flow
-      - run:
-          command: yarn jest
-          name: Jest
+      - run: echo "test"
+#      - rn/yarn_install
   checkout_code:
     executor:
       name: rn/linux_js
       node_version: '12'
     steps:
       - checkout
+      - run:
+          name: ls -la ..
+          command: ls -la ..
+      - run:
+          name: ls -la ~/.ssh
+          command: ls -la ~/.ssh
+
       - persist_to_workspace:
           paths: .
           root: .
