@@ -101,9 +101,6 @@ workflows:
   build-ios-android:
     jobs:
       - build
-      - node_only_requests:
-          requires:
-          - build
       - android-build:
           requires:
             - build
