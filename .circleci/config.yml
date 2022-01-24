@@ -42,7 +42,7 @@ jobs:
           command: echo 1
           name: Run Fastlane
 orbs:
-  rn: react-native-community/react-native@1.0.0
+  rn: react-native-community/react-native@6.2.0
 version: 2.1
 workflows:
   test:
